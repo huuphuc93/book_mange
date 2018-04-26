@@ -1,0 +1,6 @@
+<%= form_for @like do |f| %>
+  <%= f.hidden_field :book_id, value: params[:id] %>
+  <%= f.button nil, {class: "btn btn-primary"} do %>
+    <span><i class="fa fa-thumbs-up fa-1px"></i></span> <%= @book.likes.count.to_s + " " + "Like" %>
+  <% end %>
+<% end %>

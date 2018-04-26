@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BookManage</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+  </head>
+
+  <body>
+    <%= render "admin/layouts/header" %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2 sidebar fix-sidebar">
+          <%= render "admin/layouts/sidebar" %>
+        </div>
+        <div class="col-md-10 main fix-sidebar">
+          <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>">
+                <%= message %>
+            </div>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

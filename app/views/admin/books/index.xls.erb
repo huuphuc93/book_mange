@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Title</Data></Cell>
+        <Cell><Data ss:Type="String">Publisher</Data></Cell>
+        <Cell><Data ss:Type="String">Describe</Data></Cell>
+        <Cell><Data ss:Type="String">Create At</Data></Cell>
+        <Cell><Data ss:Type="String">Author</Data></Cell>
+      </Row>
+    <% @books.each do |book| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= book.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= book.title %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= book.publisher %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= book.describe %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= book.created_at %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= book.author_name %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

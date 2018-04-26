@@ -1,0 +1,13 @@
+<div class="sub-cate">
+	<div class=" top-nav rsidebar span_1_of_left">
+		<h3 class="cate">CATEGORIES</h3>
+ 		<ul class="menu">
+ 			<ul class="kid-menu">
+	 			<% @categories.each do |category| %>
+	 				<li><%= link_to category.name, category_path(category) %></li>
+	 			<% end %>
+			</ul>
+		</ul>
+	</div>
+</div>
+<div class="clearfix"> </div>    

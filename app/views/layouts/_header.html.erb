@@ -1,0 +1,79 @@
+<div class="header">
+	<div class="top-header">
+		<div class="container">
+			<div class="top-header-right">
+				<div class="down-top">		
+					  <select class="in-drop">
+						  <option value="English" class="in-of">English</option>
+						  <option value="Japanese" class="in-of">Japanese</option>
+						  <option value="French" class="in-of">French</option>
+						  <option value="German" class="in-of">German</option>
+						</select>
+				 </div>
+				<div class="down-top top-down">
+					  <select class="in-drop">
+					  
+					  <option value="Dollar" class="in-of">Dollar</option>
+					  <option value="Yen" class="in-of">Yen</option>
+					  <option value="Euro" class="in-of">Euro</option>
+						</select>
+				 </div>
+				<div class="clearfix"> </div>	
+			</div>
+			<div class="clearfix"> </div>		
+		</div>
+	</div>
+	<div class="bottom-header">
+		<div class="container">
+			<div class="header-bottom-left">
+				<div class="logo">
+					<%= link_to root_path do %>
+					  <%= image_tag "logo.png" %>
+					<% end %>
+				</div>
+				<div class="search">
+					<%= form_tag "/search", method: :get do %>
+						<%= text_field_tag "search", nil, placeholder: "Enter search term..." %>
+						<%= submit_tag "Search" %>
+					<% end %>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="header-bottom-right">					
+				<ul class="login pull-right">
+					<% if current_user %>
+      			<li id= "user_profile" class="dropdown">
+		          <div class="dropdown-toggle" data-toggle="dropdown">
+		            <%= gravatar_for current_user, size: 40 %>
+		            <div class= "user_name">
+		              <%= current_user.name %>
+		              <span class="caret"></span>
+		            </div>
+		          </div>
+		          <ul class="dropdown-menu">
+		            <li>
+		              <%= link_to user_path(current_user) do %>
+		              	<span><i class="fa fa-user fa-1x"></i></span>
+		                <%= t(".profile") %>
+		              <% end %>
+		            </li>
+		            <li>
+		              <%= link_to logout_path, method: :delete do %>
+		              	<span><i class="fa fa-sign-out fa-1x"></i></span>
+			              <%= t(".logout") %>
+		              <% end %>
+		            </li>
+		          </ul>
+		        </li>
+					<% else %>
+						<span><i class="fa fa-sign-in fa-1x"></i></span>
+						<li><%= link_to "LOGIN", login_path %></li> |
+						<li><%= link_to "SIGNUP", signup_path %></li>
+					<% end %>
+				</ul>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="clearfix"> </div>	
+		</div>
+	</div>
+</div>

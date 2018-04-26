@@ -1,0 +1,15 @@
+<%= form_for [:admin, @category] do |f| %>
+  <div class="register-top-grid">
+    <h3>CREATE CATEGORY</h3>
+    <%= render "shared/error_messages", object: f.object %>
+    <div class="mation">
+      <span>Name<label>*</label></span>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    
+    <div class="register-but">
+      <%= f.submit :Submit, class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+<div class="clearfix"> </div>

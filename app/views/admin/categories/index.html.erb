@@ -1,0 +1,31 @@
+<div class="container-fluid">
+ <div class="row">
+  <h3 class="sub-header">Categories List</h3>
+    <%= search_form_for [:admin, @q] do |f| %>
+      <%= f.label :Name %>
+      <%= f.text_field :name_cont %>
+      <%= f.submit %>
+    <% end %><br/>
+    <%= link_to "Export Excel", admin_categories_path(format: "xls"), class: "pull-right" %>
+    <%= link_to new_admin_category_path do %>
+      <span><i class="fa fa-plus fa-2px"></i>&nbsp&nbspNew Category</span>
+    <% end %>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Create At</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "category", collection: @categories %>
+        </tbody>
+      </table>
+      <%= will_paginate @categories %>
+    </div>
+  </div>
+</div>

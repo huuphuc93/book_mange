@@ -1,0 +1,29 @@
+<div class="shoes-grid">
+  <div class=" login-right">
+  	<h3>REGISTERED CUSTOMERS</h3>
+    <p>If you have an account with us, please log in.</p>
+    <%= form_for(:session, url: login_path) do |f| %>
+      <div>
+      	<span>Email Address<label>*</label></span>
+        <%= f.email_field :email, class: "form-control"%>
+      </div>
+      <div>
+      	<span>Password<label>*</label></span>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+      <%= link_to "Forgot Your Password?", new_password_reset_path, class: "forgot" %>
+      <br/><br/>
+      <%= f.label :remember_me, class: "check_box inline" do %>
+        <%= f.check_box :remember_me %>
+        <span>Remember me on this computer</span>
+      <% end %><br/>
+      <%= f.submit "Log in", class: "btn btn-primary"%>
+    <% end %>
+  </div>
+  <div class=" login-left">
+    <h3>NEW CUSTOMERS</h3>
+    <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+    <%= link_to "Create an Account", signup_path, class: "acount-btn" %>
+  </div>
+  <div class="clearfix"></div>
+</div>

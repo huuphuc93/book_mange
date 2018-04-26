@@ -1,0 +1,30 @@
+<%= form_for [:admin, @book] do |f| %>
+  <div class="register-top-grid">
+    <%= render "shared/error_messages", object: f.object %>
+    <div class="mation">
+      <span>Title<label>*</label></span>
+      <%= f.text_field :title, class: "form-control" %>
+      <span>Publisher<label>*</label></span>
+      <%= f.text_field :publisher, class: "form-control" %>
+    </div>
+    <div class="register-bottom-grid">
+	    <div class="mation">
+        <span>Describe<label>*</label></span>
+        <%= f.text_area :describe, class: "form-control" %><br/>
+        <span>Image<label>*</label></span>
+         <%= f.file_field :cover_image %><br/>
+        <span>Author<label>*</label></span>
+        <%= collection_select :book, :author_id, author_collection, :id, :name, 
+          {selected: @book.author_id}, {class: "form-control"} %><br/>
+        <span>Catefory<label>*</label></span>
+        <%= collection_select "book[:book_categories_attributes]", :category_id, 
+          categories_collection, :id, :name, {selected: @book.categories.ids}, 
+          {class: "form-control"} %><br/>
+      </div>
+    </div>
+    <div class="register-but">
+      <%= f.submit :Submit, class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+<div class="clearfix"> </div>

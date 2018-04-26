@@ -1,0 +1,31 @@
+<div class="container-fluid">
+ <div class="row">
+  <h3 class="sub-header">Authors List</h3>
+    <%= search_form_for [:admin, @q] do |f| %>
+      <%= f.label :Name %>
+      <%= f.text_field :name_cont %>
+      <%= f.submit %>
+    <% end %><br/>
+    <%= link_to "Export Excel", admin_authors_path(format: "xls"), class: "pull-right" %>
+    <%= link_to new_admin_author_path do %>
+      <span><i class="fa fa-plus fa-2px"></i>&nbsp&nbspNew Author</span>
+    <% end %>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Create At</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "author", collection: @authors %>
+        </tbody>
+      </table>
+      <%= will_paginate @authors %>
+    </div>
+  </div>
+</div>

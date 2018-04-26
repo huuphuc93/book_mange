@@ -1,0 +1,69 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import "color";
+
+body {
+  padding-top: 0px;
+}
+
+.check_box {
+  display: block;
+  span {
+    display: inline;
+    font-weight: normal;
+  }
+}
+
+#user_profile {
+  width: 150px;
+  cursor: pointer;
+  img {
+    margin-top: 5px;
+    border-radius: 50%;
+    padding-right: 10;
+    float: left;
+    width: 40px;
+    height: 40px;
+  }
+  .user_name {
+    padding-top: 15px;
+    padding-left: 50px;
+  }
+  .dropdown-toggle{
+    width: 150px !important;
+    top: 50px;
+    li {
+      width: 100%;
+    }
+  }
+}
+
+.book-partial {
+  margin: 28px 5px;
+  img{
+    width: 200px;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.book-title {
+  margin: 0;  
+}
+
+.show-book{
+  margin: 28px 5px;
+  .cover-image {
+    width: 400px;
+  }
+}
+
+.kid-menu li {
+  text-transform: uppercase;
+}
+
+.fix-sidebar{
+  top: 50px;  
+}

@@ -1,0 +1,29 @@
+<%= form_for [:admin, @user] do |f| %>
+  <div class="register-top-grid">
+    <h3>PERSONAL INFORMATION</h3>
+    <%= render "shared/error_messages", object: f.object %>
+    <div class="mation">
+      <span>Name<label>*</label></span>
+      <%= f.text_field :name, class: "form-control" %>
+    
+      <span>Email Address<label>*</label></span>
+      <%= f.email_field :email, class: "form-control" %>
+    </div>
+    <div class="register-bottom-grid">
+	    <div class="mation">
+        <span>Password<label>*</label></span>
+        <%= f.password_field :password, class: "form-control" %><br/>
+        <span>Confirm Password<label>*</label></span>
+        <%= f.password_field :password_confirmation, class: "form-control" %><br/>
+        <%= f.label :activated, class: "check_box inline" do %>
+          <%= f.check_box :activated %>
+        <span>Activated <label>*</label></span>
+      <% end %><br/>
+      </div>
+    </div>
+    <div class="register-but">
+      <%= f.submit :Submit, class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+<div class="clearfix"> </div>

@@ -1,0 +1,13 @@
+<div class="shoes-grid">
+  <div class= "login-right">
+    <h3>RESET PASSWORD</h3>
+    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+      <div>
+        <span>Email Address<label>*</label></span>
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  <div class="clearfix"></div>
+</div>

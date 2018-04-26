@@ -1,0 +1,14 @@
+<div class="row book-partial">
+  <div class="col-md-4">
+    <%= link_to book_path(book) do %>
+      <%= image_tag book.cover_image %>
+    <% end %>
+  </div>
+  <div class="col-md-8">
+    <%= link_to book_path(book) do %>
+      <h2 class= "book-title"><%= book.title %></h2>
+    <% end %>
+    <h4><i>Describe:</i></h4>
+    <p><%= book.describe %></p>
+  </div>
+</div>
